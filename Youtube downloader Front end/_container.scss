@@ -1,0 +1,18 @@
+@mixin flex-center{
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+@mixin for-size($size) {
+    @if $size == phone-only {
+      @media (max-width: 861px) { @content; }
+    } @else if $size == tablet-portrait-up{
+      @media (min-width: 861px) { @content; }
+    } @else if $size == potato {
+      @media (min-width: 448px) { @content; }
+    } @else if $size == desktop-up {
+      @media (min-width: 1200px) { @content; }
+    } @else if $size == big-desktop-up {
+      @media (min-width: 1800px) { @content; }
+    }
+  }
